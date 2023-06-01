@@ -23,7 +23,7 @@ steps:
     versionSpec: 3.8
 
 - script: |
-    pip install databricks cli
+    pip install databricks-cli
   displayName: 'load python dependencies'
 
 - script: |
