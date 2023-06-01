@@ -10,10 +10,27 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+- task: UsePythonVersion@0
+  displayName: 'Use Python 3.8'
+  inputs:
+    versionSpec: 3.8
 
 - script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+    pip install databricks-cli
+  displayName: 'load python dependencies'
+
+- script: |
+    echo "y
+    $(DATABRICKS_ADDRESS)
+    $(DATABRICKS_API_TOKEN)" | databricks configure --token
+  displayName: 'Configure Databricks cli'
+
+- script: |
+    mkdir /home/vsts/work/1/s/DBtest
+    echo "import pandas" >> /home/vsts/work/1/s/DBtest/dbtest.py
+  displayName: 'create python file'
+
+- script: |
+    databricks workspace import_dir -o /home/vsts/work/1/s/DBtest /
+  displayName: 'import file'
+
