@@ -22,6 +22,16 @@ steps:
   inputs:
     versionSpec: 3.8
 
+- script: |
+    pip install databricks cli
+  displayName: 'load python dependencies'
+
+- script: |
+    echo "y
+    $(DATABRICKS_ADDRESS)
+    $(DATABRICKS_API_TOKEN)" | databricks configure --token
+  displayName: 'Configure Databricks cli'
+  
 # Install required Python modules and their dependencies. These
 # include pytest, which is needed to run unit tests on a cluster,
 # and setuptools, which is needed to create a Python wheel. Also
