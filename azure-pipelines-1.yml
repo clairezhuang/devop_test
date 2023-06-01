@@ -31,6 +31,6 @@ steps:
   displayName: 'create python file'
 
 - script: |
-    databricks workspace import_dir -o /home/vsts/work/1/s/DBtest /
-  displayName: 'import file'
+    databricks workspace mkdirs //build
+  displayName: 'mkdirs build'
 
