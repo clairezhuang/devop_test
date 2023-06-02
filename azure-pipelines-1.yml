@@ -27,10 +27,10 @@ steps:
 
 - script: |
     mkdir /home/vsts/work/1/s/DBtest
-    echo "import pandas" >> /home/vsts/work/1/s/DBtest/dbtest.py
+    echo "import pandas" >> /home/vsts/work/1/s/DBtest/Users/zhiyunluo@microsoft.com/dbtest.py
   displayName: 'create python file'
 
 - script: |
-    databricks workspace import_dir -o  /home/vsts/work/1/s/DBtest /Users/zhiyunluo@microsoft.com
+    databricks workspace import_dir -o  /home/vsts/work/1/s/DBtest /
   displayName: 'import file'
 
