@@ -22,7 +22,7 @@ steps:
 - script: |
     echo "y
     $(DATABRICKS_ADDRESS)
-    $(DATABRICKS_API_TOKEN)" | databricks configure --profile uc3 --token
+    $(DATABRICKS_API_TOKEN)" | databricks configure --token
   displayName: 'Configure Databricks cli'
 
 - script: |
@@ -31,6 +31,6 @@ steps:
   displayName: 'create python file'
 
 - script: |
-    databricks workspace import_dir -o --profile uc3 /home/vsts/work/1/s/DBtest /
+    databricks workspace import_dir -o  /home/vsts/work/1/s/DBtest /Users/zhiyunluo@microsoft.com
   displayName: 'import file'
 
