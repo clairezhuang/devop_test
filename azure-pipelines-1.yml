@@ -28,7 +28,7 @@ steps:
 - script: |
     mkdir /home/vsts/work/1/s/DBtest
     mkdir /home/vsts/work/1/s/DBtest/Users
-    echo "import pandas" >> /home/vsts/work/1/s/DBtest/Users/dbtest2.py
+    mkdir /home/vsts/work/1/s/DBtest/Users/abc123@microsoft.com
   displayName: 'create python file'
 
 - script: |
