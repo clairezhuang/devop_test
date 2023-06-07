@@ -28,8 +28,8 @@ steps:
 - script: |
     mkdir /home/vsts/work/1/s/DBtest
     mkdir /home/vsts/work/1/s/DBtest/Users
-    mkdir /home/vsts/work/1/s/DBtest/Users/zhiyunluo@microsoft.com
-    echo "import pandas" >> /home/vsts/work/1/s/DBtest/Users/zhiyunluo@microsoft.com/dbtest.py
+    mkdir /home/vsts/work/1/s/DBtest/Users/clairezhuang@microsoft.com
+    echo "import pandas" >> /home/vsts/work/1/s/DBtest/Users/clairezhuang@microsoft.com/dbtest.py
   displayName: 'create python file'
 
 - script: |
